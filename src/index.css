@@ -1,0 +1,508 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+  --blue-color: #012233;
+  --blue-color-2: #16192c;
+  --black-color: #111111;
+  --black-color-2: #000;
+  --black-color-3: #212529;
+  --green-color: #33ed88;
+  --green-color-2: #d3f9d8;
+  --green-color-3: #e1fded;
+  --gray-color: #595959;
+  --gray-color-2: #edeff1;
+  --gray-color-3: #727272;
+  --white-color: #ffffff;
+  --white-color-2: #e7e7e7;
+  --white-color-3: #e1e1e1;
+}
+
+.blue-color{
+    color: var(--blue-color);
+}
+.blue-color-2{
+    color: var(--blue-color-2);
+}
+.black-color{
+    color: var(--black-color);
+}
+.black-color-2{
+    color: var(--black-color-2);
+}
+.green-color{
+    color: var(--green-color);
+}
+.green-color-2{
+    color: var(--green-color-2);
+}
+.gray-color{
+    color: var(--gray-color);
+}
+.gray-color-2{
+    color: var(--gray-color-2);
+}
+.gray-color-3{
+    color: var(--gray-color-3);
+}
+.white-color{
+    color: var(--white-color);
+}
+.white-color-2{
+    color: var(--white-color-2);
+}
+
+/* background color  */
+.bg-blue-color{
+    background-color: var(--blue-color);
+}
+.bg-blue-color-2{
+    background-color: var(--blue-color-2);
+}
+.bg-black-color{
+    background-color: var(--black-color);
+}
+.bg-black-color-2{
+    background-color: var(--black-color-2);
+}
+.bg-green-color{
+    background-color: var(--green-color);
+}
+.bg-green-color-2{
+    background-color: var(--green-color-2);
+}
+.bg-gray-color{
+    background-color: var(--gray-color);
+}
+.bg-gray-color-2{
+    background-color: var(--gray-color-2);
+}
+.bg-gray-color-3{
+    background-color: var(--gray-color-3);
+}
+.bg-white-color{
+    background-color: var(--white-color);
+}
+.bg-white-color-2{
+    background-color: var(--white-color-2);
+}
+
+body{
+  background-color: var(--gray-color-2) !important;
+}
+a:hover{
+  color: var(--blue-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 42px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.bg-hover-green {
+    background-color: var(--blue-color);
+  color: var(--green-color);
+
+  &:hover {
+    background-color: var(--green-color);
+  color: var(--blue-color);
+  }
+}
+.bg-hover-blue{
+   background-color: var(--green-color);
+  color: var(--blue-color);
+  &:hover{
+ background-color: var(--blue-color);
+  color: var(--green-color);
+  }
+}
+.cancel-btn{
+  background-color: red;
+  color: var(--white-color);
+  &:hover{
+    background-color: #e61414cb;
+  }
+}
+.plus-btn{
+  border: 1px solid #cfcfcf;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+/* primary font  */
+
+.urbanist-thin {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.urbanist-extralight {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.urbanist-light {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.urbanist-regular {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.urbanist-medium {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.urbanist-semibold {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.urbanist-bold {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.urbanist-extrabold {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.urbanist-black {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.urbanist-thin-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.urbanist-extralight-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.urbanist-light-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.urbanist-regular-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.urbanist-medium-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.urbanist-semibold-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.urbanist-bold-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.urbanist-extrabold-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.urbanist-black-italic {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* secondary font  */
+
+.inter-thin {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.inter-extralight {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-medium {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inter-extrabold {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.inter-black {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.inter-thin-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.inter-extralight-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.inter-light-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.inter-regular-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inter-medium-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.inter-semibold-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.inter-bold-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.inter-extrabold-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.inter-black-italic {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+/* ===================== */
+
+/* .profile-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: $space-md;
+  font-family: $font-family;
+  position: relative;
+  @include card-shadow;
+
+  .badge-prospect {
+    background: $secondary;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    position: absolute;
+    top: $space-sm;
+    left: $space-sm;
+  }
+
+  .header-row {
+    @include flex-center;
+    justify-content: space-between;
+    margin-top: $space-lg;
+
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+
+      .star {
+        color: $text-light;
+        margin-left: $space-xs;
+      }
+    }
+
+    .edit-icon {
+      cursor: pointer;
+      color: $text-light;
+      @include transition(color);
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .info {
+    margin-top: $space-md;
+
+    p {
+      margin: 6px 0;
+      font-size: 14px;
+
+      strong {
+        width: 100px;
+        display: inline-block;
+        color: $text-light;
+      }
+
+      a {
+        color: $primary;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .icons-row {
+      display: flex;
+      gap: $space-sm;
+      margin: $space-sm 0;
+
+      .icon {
+        font-size: 18px;
+
+        &.orange {
+          color: orange;
+        }
+      }
+    }
+  }
+
+  .actions-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: $space-md;
+    margin: $space-md 0;
+
+    .action {
+      font-size: 12px;
+      color: $text-light;
+      cursor: pointer;
+
+      svg {
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        color: $primary;
+      }
+    }
+  }
+
+  .expand {
+    color: $success;
+    font-size: 14px;
+    margin-top: $space-sm;
+    cursor: pointer;
+  }
+} */
