@@ -758,6 +758,9 @@ hr {
 .sidebar.open {
   width: 250px; /* Expanded sidebar width */
 }
+.sidebar.open .logo-details{
+  padding-left: 20px;
+}
 .sidebar.open .logo {
   width: 100%;
 }
@@ -1099,7 +1102,24 @@ font-size: 14px;
     background: $sidebar-bg-color; /* subtle dark track */
   }
 }
-
+/* Large screens (≥992px) */
+@media (min-width: 992px) {
+  .modal.right .modal-dialog {
+    width: 700px; /* keeps default width */
+  }
+}
+/* Medium screens (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .modal.right .modal-dialog {
+    width: 500px; /* smaller width for tablets */
+  }
+}
+/* Small screens (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .modal.right .modal-dialog {
+    width: 350px; /* small width for large phones / small tablets */
+  }
+}
 /* Small screens: always show scrollbar */
 @media (max-width: 575px) {
   .sidebar .scroll {
@@ -1112,6 +1132,9 @@ font-size: 14px;
 
   .sidebar .scroll::-webkit-scrollbar-track {
     background: $sidebar-bg-color;
+  }
+  .modal.right .modal-dialog {
+    width: 100%; /* full screen for mobile */
   }
 }
 /* Scrollbar styles for sidebar end */

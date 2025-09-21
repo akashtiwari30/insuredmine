@@ -48,7 +48,7 @@ const FileUploader = () => {
         <input {...getInputProps()} />
         <i class="fa-solid fa-folder-open fs-3"></i>
         {isDragActive ? <p>Drop files here...</p> : <p>Drag & drop files here, or click to select files</p>}
-        <p className="mt-3 fs-6">(.jpg.png.pdf.docx,.txt.gif.jpeg.xlsxsx.csv.zip.doc.ppt.docx.pptx,.ppsx.mp3.wav) Size limit-20.00 MB</p>
+        <p className="mt-3 fs-6">(.jpg.png.pdf.docx, .txt.gif.jpeg.xlsxsx.csv.zip .doc.ppt.docx.pptx, .ppsx.mp3.wav) Size limit-20.00 MB</p>
       </div>
 
       {files.length > 0 && (
