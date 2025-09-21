@@ -7,14 +7,23 @@ const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0); // active nav link
 
   const sidebarData = [
-    { label: "Dashboard", icon: "bx bx-grid-alt", href: "#", tooltip: "Dashboard" },
-    { label: "User", icon: "bx bx-user", href: "#", tooltip: "User" },
-    { label: "Messages", icon: "bx bx-chat", href: "#", tooltip: "Messages" },
-    { label: "Analytics", icon: "bx bx-pie-chart-alt-2", href: "#", tooltip: "Analytics" },
-    { label: "File Manager", icon: "bx bx-folder", href: "#", tooltip: "Files" },
-    { label: "Order", icon: "bx bx-cart-alt", href: "#", tooltip: "Order" },
-    { label: "Saved", icon: "bx bx-heart", href: "#", tooltip: "Saved" },
-    { label: "Setting", icon: "bx bx-cog", href: "#", tooltip: "Setting" }
+    
+
+  { "icon": "fa-solid fa-table-columns", "label": "Dashboard", "href": "/dashboard", "tooltip": "Go to Dashboard" },
+  { "icon": "fa-solid fa-building-columns", "label": "Bank", "href": "/bank", "tooltip": "Bank Management" },
+  { "icon": "fa-solid fa-layer-group", "label": "Category", "href": "/categories", "tooltip": "Manage Categories" },
+  { "icon": "fa-solid fa-file-lines", "label": "Reports", "href": "/reports", "tooltip": "View Reports" },
+  { "icon": "fa-solid fa-paper-plane", "label": "Send", "href": "/send", "tooltip": "Send Items" },
+  { "icon": "fa-solid fa-user", "label": "User", "href": "/users", "tooltip": "User Management" },
+  { "icon": "fa-solid fa-chart-line", "label": "Analytics", "href": "/analytics", "tooltip": "Analytics & Insights" },
+  { "icon": "fa-solid fa-cube", "label": "Products", "href": "/products", "tooltip": "Manage Products" },
+  { "icon": "fa-solid fa-table-cells-large", "label": "Apps", "href": "/apps", "tooltip": "Applications" },
+  { "icon": "fa-solid fa-clipboard", "label": "Tasks", "href": "/tasks", "tooltip": "Task Management" },
+  { "icon": "fa-solid fa-envelope", "label": "Messages", "href": "/messages", "tooltip": "View Messages" },
+  { "icon": "fa-solid fa-screwdriver-wrench", "label": "Tools", "href": "/tools", "tooltip": "Developer Tools" },
+  { "icon": "fa-solid fa-circle-info", "label": "Info", "href": "/info", "tooltip": "Information" },
+  { "icon": "fa-solid fa-chart-column", "label": "Reports", "href": "/statistics", "tooltip": "Statistics & Charts" },
+  { "icon": "fa-solid fa-gear", "label": "Settings", "href": "/settings", "tooltip": "System Settings" }
   ];
 
   const toggleSidebar = () => setIsOpen(!isOpen);
