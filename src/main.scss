@@ -574,6 +574,7 @@ hr {
   height: calc(100% - 30px);
   padding-left: 0;
   margin-top: 10px;
+  padding-bottom: 60px;
 }
 .nav-list li.active a {
   background-color: $gray-dark;
@@ -1069,4 +1070,48 @@ font-size: 14px;
   .sub-accordion .card .card-body .subject-from-to .subject-to {
     flex-direction: column;
   }
+  .sidebar .scroll {
+  overflow-y: visible;
 }
+}
+
+
+/* Scrollbar styles for sidebar start */
+
+/* Show scrollbar only on hover (large screens) */
+@media (min-width: 576px) {
+  .sidebar .scroll:hover {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $primary transparent;
+  }
+}
+
+
+
+/* On hover: styled scrollbar for large screens */
+@media (min-width: 576px) {
+  .sidebar .scroll:hover::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $primary, $primary); /* gradient thumb */
+  }
+
+  .sidebar .scroll:hover::-webkit-scrollbar-track {
+    background: $sidebar-bg-color; /* subtle dark track */
+  }
+}
+
+/* Small screens: always show scrollbar */
+@media (max-width: 575px) {
+  .sidebar .scroll {
+    overflow-y: auto;
+  }
+
+  .sidebar .scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $primary, $primary);
+  }
+
+  .sidebar .scroll::-webkit-scrollbar-track {
+    background: $sidebar-bg-color;
+  }
+}
+/* Scrollbar styles for sidebar end */
