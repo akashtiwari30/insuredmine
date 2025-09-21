@@ -1060,3 +1060,13 @@ font-size: 14px;
     border-left: 1px solid $gray-light-2;
   }
 }
+
+
+
+
+@media screen and (max-width: 480px) {
+  .sub-accordion .card .card-header,
+  .sub-accordion .card .card-body .subject-from-to .subject-to {
+    flex-direction: column;
+  }
+}

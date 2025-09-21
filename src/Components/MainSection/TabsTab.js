@@ -115,7 +115,7 @@ function CardItem({ card, isOpen, onToggle }) {
   return (
     <div className="accordion sub-accordion mb-3">
       <div className="card border-0">
-        <div className="card-header d-flex justify-content-between align-items-center">
+        <div className="card-header">
           <div>
             <button
               className="btn toggle-btn btn-link px-0 btn-block text-left d-flex align-items-center"
