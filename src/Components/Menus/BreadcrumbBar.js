@@ -5,7 +5,7 @@ function BreadcrumbBar() {
   return (
     <div className="breadcrumb-bar row align-items-center px-3 py-2">
       {/* Left side: Breadcrumbs */}
-      <div className="col-4">
+      <div className="col-lg-4 col-md-6 col-sm-6 col-xs-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -19,7 +19,7 @@ function BreadcrumbBar() {
       </div>
 
       {/* Right side: Actions */}
-      <div className="col-8 text-end">
+      <div className="col-lg-8 col-md-6 col-sm-6 col-xs-12 text-end">
         <div className="d-flex align-items-center justify-content-end gap-2">
           {/* <button className="btn btn-light border">
             <FiRefreshCcw size={16} />
