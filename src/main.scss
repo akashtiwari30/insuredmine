@@ -1,6 +1,21 @@
 @import "./mixins";
 @import "./variables.scss";
 
+
+
+// Importing Google Fonts and Boxicons
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css");
+
+// Global style settings
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
 // breadcrumb start
 .breadcrumb {
   margin-bottom: 0px;
@@ -132,9 +147,6 @@ hr {
 .actions-row {
   display: flex;
   flex-wrap: wrap;
-  /* display: grid;
-    grid-template-columns: repeat(4, 1fr); */
-  /* gap: 12px; */
   text-align: center;
   justify-content: space-between;
   margin: 12px 1px;
@@ -202,7 +214,7 @@ hr {
   font-size: 12px;
   color: var(--bs-gray-500);
 }
-/* profile card endss here  */
+/* profile card ends here  */
 
 /* left accordion ends here  */
 // styles.scss
@@ -212,11 +224,9 @@ hr {
   margin-top: 15px;
   .accordion-card {
     border: 0;
-    // margin-bottom: 6px;
     border-radius: 6px;
     overflow: hidden;
-    .card-body {
-    }
+    
   }
 
   .accordion-header {
@@ -444,8 +454,6 @@ hr {
 }
 .dashboard-container {
   display: flex;
-  /* height: 100vh; */
-  /* gap: 20px; */
 }
 
 /* navbar section start here  */
@@ -459,8 +467,6 @@ hr {
   border-radius: 5px;
 }
 .search-btn {
-  /* height: 35px;
-    width: 88px; */
   padding: 5px 20px;
   border: 0;
   background: var(--blue-color-2);
@@ -473,40 +479,298 @@ hr {
 }
 /* navbar section end here  */
 
-// --------------- sidebar start here -------------
-/* Importing Google Fonts and Boxicons */
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap";
+// --------------- sidebar starts here -------------
 
-@import "https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css";
-
-/* Global style settings */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif; /* Applying 'Poppins' font globally */
-}
 .App {
   overflow: hidden;
 }
+
 .logo {
   width: 40px;
 }
+
 .sidebar-wrapper-container {
   height: 100%;
 }
-/* Sidebar container styling */
+
+// Sidebar container styling
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  width: 60px; /* Default sidebar width */
-  background: #11101d; /* Dark background color for sidebar */
-  padding: 6px 0px;
-  z-index: 99; /* Ensures sidebar is on top */
-  transition: all 0.5s ease; /* Smooth transition for width change */
+  width: 60px;
+  background: $sidebar-bg-color;
+  padding: 6px 0;
+  z-index: 99;
+  transition: all 0.5s ease;
+
+  .logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 4px;
+
+    .icon {
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .logo-name {
+      color: $white-color;
+      font-size: 20px;
+      font-weight: 600;
+      transition: all 0.5s ease;
+    }
+
+    #toggle-btn {
+      position: absolute;
+      top: 27%;
+      right: -14px;
+      transform: translateY(-50%);
+      font-size: 23px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      color: $gray-dark;
+      background-color: white;
+      border-radius: 50%;
+      height: 26px;
+      width: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .nav-list {
+    height: calc(100% - 30px);
+    padding-left: 0;
+    margin-top: 10px;
+    padding-bottom: 60px;
+
+    li {
+      position: relative;
+      margin: 0px 9px 0px 0;
+      list-style: none;
+      height: 45px;
+
+      i {
+        color: $white-color;
+        min-width: 50px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 60px;
+      }
+
+      .tooltip {
+        position: absolute;
+        top: -20px;
+        left: calc(100% + 15px);
+        z-index: 3;
+        background: $white-color;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 400;
+        width: 160px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0s;
+      }
+
+      &:hover {
+        .tooltip {
+          opacity: 1;
+          pointer-events: auto;
+          transition: all 0.4s ease;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        border-left: 3px solid $sidebar-bg-color;
+
+        &:hover {
+          background: $gray-dark;
+          border-left: 3px solid $secondary;
+
+          .links_name {
+            transition: all 0.5s ease;
+          }
+
+          i {
+            transition: all 0.5s ease;
+          }
+        }
+
+        .links_name {
+          color: $white-color;
+          font-size: 15px;
+          font-weight: 400;
+          white-space: nowrap;
+          opacity: 0;
+          pointer-events: none;
+          transition: 0.4s;
+        }
+      }
+
+      .profile-details {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+
+      img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 10px;
+      }
+    }
+
+    li.active a {
+      background-color: $gray-dark;
+      color: $white-color;
+      border-left: 3px solid $secondary;
+    }
+  }
+
+  // Scrollbar styles
+  .scroll {
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: $primary transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, $primary, $primary);
+    }
+
+    &:hover::-webkit-scrollbar-track {
+      background: $sidebar-bg-color;
+    }
+  }
+
+  input {
+    font-size: 15px;
+    color: $white-color;
+    font-weight: 400;
+    outline: none;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    background: #1d1b31;
+  }
+
+  .bx-search {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    background: #1d1b31;
+    color: $white-color;
+
+    &:hover {
+      background: $white-color;
+      color: $sidebar-bg-color;
+    }
+  }
+
+  &.open {
+    width: 250px;
+
+    .logo-details {
+      padding-left: 20px;
+
+      .icon {
+        opacity: 1;
+      }
+
+      .logo-name {
+        opacity: 1;
+      }
+
+      #btn {
+        text-align: right;
+      }
+    }
+
+    .logo {
+      width: 100%;
+    }
+
+    li .tooltip {
+      display: none;
+    }
+
+    li a .links_name {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    input {
+      padding: 0 20px 0 50px;
+      width: 100%;
+    }
+
+    .bx-search:hover {
+      background: #1d1b31;
+      color: #fff;
+    }
+
+    li.profile {
+      width: 250px;
+    }
+
+    .profile #log_out {
+      width: 50px;
+      background: none;
+    }
+
+    ~ .home-section {
+      left: 250px;
+      width: calc(100% - 250px);
+    }
+  }
 }
+
+// Main content
 .main-contentt {
   position: relative;
   padding-left: 60px;
@@ -514,310 +778,25 @@ hr {
   width: 100%;
 }
 
-/* Logo details within the sidebar */
-.sidebar .logo-details {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-left: 4px;
-}
-.sidebar .logo-details .icon {
-  opacity: 0; /* Hidden by default, shows when sidebar is expanded */
-  transition: all 0.5s ease;
-}
-.sidebar .logo-details .logo-name {
-  color: $white-color;
-  font-size: 20px;
-  font-weight: 600;
-  /* opacity: 0;  */
-  transition: all 0.5s ease;
-}
-.sidebar .logo-details #toggle-btn {
-  position: absolute;
-  top: 27%;
-  right: -14px;
-  transform: translateY(-50%);
-  font-size: 23px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  color: $gray-dark;
-  background-color: white;
-  border-radius: 50%;
-  height: 26px;
-  width: 26px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-// .sidebar.open .logo-details #toggle-btn {
-//     right: -30px;
-// }
-.sidebar .logo-details #toggle-btn i {
-  font-size: 12px;
-  /* font-weight: 400; */
-}
-/* General icon styling */
-.sidebar .nav-list li i {
-  color: $white-color;
-  // height: 50px;
-  min-width: 50px;
-  font-size: 16px;
-  text-align: center;
-  line-height: 60px;
-}
-
-/* Sidebar navigation list styling */
-.sidebar .nav-list {
-  height: calc(100% - 30px);
-  padding-left: 0;
-  margin-top: 10px;
-  padding-bottom: 60px;
-}
-.nav-list li.active a {
-  background-color: $gray-dark;
-  color: $white-color;
-  border-left: 3px solid $secondary;
-}
-
-/* Scrollbar styles for sidebar start*/
-.sidebar .scroll {
-  overflow-y: hidden;
-}
-
-/* Show scrollbar only on hover */
-.sidebar .scroll:hover {
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: $primary transparent;
-}
-
-/* WebKit browsers (Chrome, Edge, Safari) */
-.sidebar .scroll::-webkit-scrollbar {
-  width: 6px;
-}
-
-.sidebar .scroll::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-}
-
-.sidebar .scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* On hover: styled scrollbar */
-.sidebar .scroll:hover::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, $primary, $primary); /* gradient thumb */
-}
-
-.sidebar .scroll:hover::-webkit-scrollbar-track {
-  background: $sidebar-bg-color; /* subtle dark track */
-}
-/* Scrollbar styles for sidebar end*/
-
-/* Sidebar navigation item styling */
-.sidebar li {
-  position: relative;
-  margin: 0px 9px 0px 0;
-  list-style: none;
-  height: 45px;
-}
-.sidebar li .tooltip {
-  position: absolute;
-  top: -20px;
-  left: calc(100% + 15px);
-  z-index: 3;
-  background: $white-color;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  width: 160px;
-  opacity: 0; /* Hidden by default */
-  pointer-events: none;
-  transition: 0s;
-}
-.sidebar li:hover .tooltip {
-  opacity: 1; /* Shows tooltip on hover */
-  pointer-events: auto;
-  transition: all 0.4s ease;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Link styling within sidebar items */
-.sidebar li a {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  // border-radius: 12px;
-  align-items: center;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  border-left: 3px solid $sidebar-bg-color;
-}
-.sidebar li a:hover {
-  background: $gray-dark;
-  border-left: 3px solid $secondary;
-}
-
-/* Link text and icon hover effects */
-.sidebar li a:hover .links_name {
-  transition: all 0.5s ease;
-}
-.sidebar li a:hover i {
-  transition: all 0.5s ease;
-}
-
-/* Link text styling */
-.sidebar li a .links_name {
-  color: $white-color;
-  font-size: 15px;
-  font-weight: 400;
-  white-space: nowrap;
-  opacity: 0; /* Hidden by default */
-  pointer-events: none;
-  transition: 0.4s;
-}
-
-/* Icon styling within sidebar items */
-
-/* Profile details styling */
-.sidebar li .profile-details {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.sidebar li img {
-  height: 45px;
-  width: 45px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-right: 10px;
-}
-
-/* Sidebar input (search) styling */
-.sidebar input {
-  font-size: 15px;
-  color: $white-color;
-  font-weight: 400;
-  outline: none;
-  height: 50px;
-  width: 50px; /* Default width for search input */
-  border: none;
-  border-radius: 12px;
-  transition: all 0.5s ease;
-  background: #1d1b31; /* Input background color */
-}
-
-/* Search button styling */
-.sidebar .bx-search {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  background: #1d1b31;
-  color: $white-color;
-}
-.sidebar .bx-search:hover {
-  background: $white-color;
-  color: #11101d;
-}
-
-/* Profile section styling */
-// .sidebar li.profile {
-//   position: fixed;
-//   height: 60px;
-//   width: 78px;
-//   left: 0;
-//   bottom: -8px;
-//   padding: 10px 14px;
-//   background: #1d1b31;
-//   transition: all 0.5s ease;
-//   overflow: hidden;
-// }
-// .sidebar li.profile .name {
-//   font-size: 15px;
-//   font-weight: 400;
-//   color: $white-color;
-//   white-space: nowrap;
-// }
-// .sidebar li.profile .job {
-//   font-size: 12px;
-//   font-weight: 400;
-//   color: $white-color;
-//   white-space: nowrap;
-// }
-
-.sidebar.open {
-  width: 250px; /* Expanded sidebar width */
-}
-.sidebar.open .logo-details{
-  padding-left: 20px;
-}
-.sidebar.open .logo {
-  width: 100%;
-}
-.sidebar.open .logo-details .icon {
-  opacity: 1; /* Shows icon in expanded state */
-}
-.sidebar.open .logo-details .logo-name {
-  opacity: 1; /* Shows logo name in expanded state */
-}
-.sidebar.open .logo-details #btn {
-  text-align: right;
-}
-.sidebar.open li .tooltip {
-  display: none; /* Hides tooltips when expanded */
-}
-.sidebar.open li a .links_name {
-  opacity: 1; /* Shows link names when expanded */
-  pointer-events: auto;
-}
-.sidebar.open input {
-  padding: 0 20px 0 50px;
-  width: 100%; /* Expands input width */
-}
-.sidebar.open .bx-search:hover {
-  background: #1d1b31;
-  color: #fff;
-}
-.sidebar.open li.profile {
-  width: 250px; /* Expands profile section */
-}
-.sidebar.open .profile #log_out {
-  width: 50px; /* Shrinks logout button */
-  background: none;
-}
-.sidebar.open ~ .home-section {
-  left: 250px; /* Adjusts home section to sidebar width */
-  width: calc(100% - 250px);
-}
-
-/* Main content (home section) styling */
 .home-section {
   position: relative;
-  background: #e4e9f7; /* Light background for main content */
+  background: #e4e9f7;
   min-height: 100vh;
   top: 0;
   left: 78px;
-  width: calc(100% - 78px); /* Adjusts width to fit next to sidebar */
+  width: calc(100% - 78px);
   transition: all 0.5s ease;
   z-index: 2;
+
+  .text {
+    display: inline-block;
+    color: #11101d;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px;
+  }
 }
-.home-section .text {
-  display: inline-block;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px;
-}
+
 // --------------- sidebar ends here -------------
 
 // -----------------------top bar start-----------
@@ -830,9 +809,6 @@ hr {
 
 .main-content {
   flex-grow: 1;
-  /* padding: 20px; */
-  /* padding-right: 10px; */
-  /* background-color: #f8f9fa; */
   position: relative;
 }
 .topbar {
@@ -859,7 +835,6 @@ hr {
 
 .search-bar.scrolled,
 .top-bar.scrolled {
-  // background-color: $white-color-2;
   margin-top: 0px;
   position: sticky;
   top: 0;
@@ -943,9 +918,6 @@ hr {
   }
 }
 
-
-
-
 .search {
   width: 100%;
   position: relative;
@@ -958,7 +930,6 @@ hr {
   border-right: none;
   padding: 5px 10px;
 font-size: 14px;
-  // height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: $gray-light-2;
@@ -970,7 +941,6 @@ font-size: 14px;
 
 .searchButton {
   width: 40px;
-  // height: 36px;
   border: 1px solid $gray-light;
   background: $white-color-2;
   text-align: center;
@@ -980,20 +950,7 @@ font-size: 14px;
    color: $gray-dark-2;
 }
 
-/*Resize the wrap to see the search bar change!*/
-// .wrap{
-//   width: 30%;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-
-
 // ---------------------- Email modal -----------------
-
-
-
 /* Slide in modal from the right */
 //* Right Sidebar Modal */
 .modal.right {
@@ -1009,8 +966,8 @@ font-size: 14px;
   right: 0;
   margin: 0;
   height: 100%;
-  max-width: none;       /* override Bootstrap default */
-  width: 700px;          /* set your desired width */
+  max-width: none;       
+  width: 700px;         
   transform: translate3d(100%, 0, 0);
   transition: transform 0.3s ease-out;
 }
@@ -1056,6 +1013,9 @@ font-size: 14px;
 .send-btn{
   background-color: $primary;
   color: $white-color;
+  &:hover{
+    border: 1px solid $primary;
+  }
 }
 .save-dropdown{
   border-left: 1px solid $gray-light-2;
@@ -1105,19 +1065,19 @@ font-size: 14px;
 /* Large screens (≥992px) */
 @media (min-width: 992px) {
   .modal.right .modal-dialog {
-    width: 700px; /* keeps default width */
+    width: 700px;
   }
 }
 /* Medium screens (768px - 991px) */
 @media (max-width: 991px) and (min-width: 768px) {
   .modal.right .modal-dialog {
-    width: 500px; /* smaller width for tablets */
+    width: 500px; 
   }
 }
 /* Small screens (576px - 767px) */
 @media (max-width: 767px) and (min-width: 576px) {
   .modal.right .modal-dialog {
-    width: 350px; /* small width for large phones / small tablets */
+    width: 350px;
   }
 }
 /* Small screens: always show scrollbar */
@@ -1134,7 +1094,7 @@ font-size: 14px;
     background: $sidebar-bg-color;
   }
   .modal.right .modal-dialog {
-    width: 100%; /* full screen for mobile */
+    width: 100%; 
   }
 }
 /* Scrollbar styles for sidebar end */

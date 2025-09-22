@@ -19,11 +19,9 @@ function Profile() {
       
       <div className="d-flex justify-content-between mt-3">
         <div>
-              {/* <p className="mb-1"><i class="fa-solid fa-gears"></i> My Preferences</p> */}
               <a href="#" className="gray-color text-decoration-none"><i class="fa-solid fa-gears me-1"></i> My Preferences</a>
         </div>
         <div>
-          {/* <p className="mb-1"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sin out</p> */}
           <button className="border-0 rounded"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sin out</button>
         </div>
       </div>
